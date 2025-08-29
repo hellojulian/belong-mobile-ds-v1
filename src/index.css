@@ -1,0 +1,492 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+  @font-face {
+    font-family: "Proxima";
+    src: url("./ProximaNova-SemiBold.ttf");
+    font-weight: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Proxima";
+    src: url("./ProximaNova-Bold.ttf");
+    font-weight: 700;
+    font-display: swap;
+  }
+}
+
+.font-proxima {
+  font-family: "Proxima";
+  src: url("./ProximaNova-Bold.ttf");
+  font-weight: 600;
+  font-display: swap;
+}
+
+.font-proxima-bold {
+  font-family: "Proxima" !important;
+  src: url("./ProximaNova-Bold.ttf");
+  font-weight: 800;
+  font-display: swap;
+}
+
+.font-proxima-semibold {
+  font-family: "Proxima" !important;
+  src: url("./ProximaNova-SemiBold.ttf");
+  font-weight: 600;
+  font-display: swap;
+}
+
+.font-proxima-regular {
+  font-family: "Proxima" !important;
+  src: url("./ProximaNova-Regular.ttf");
+  font-weight: 400;
+  font-display: swap;
+}
+.font-proxima-body {
+  font-family: "Proxima" !important;
+  src: url("./ProximaNova-Regular.ttf");
+  font-weight: 100;
+  font-display: swap;
+}
+
+.sbdocs-title {
+  font-family: "Proxima" !important;
+  letter-spacing: -1px;
+  src: url("./ProximaNova-Bold.ttf");
+  font-weight: 600;
+  font-display: swap;
+}
+
+/* Base styles */
+@layer base {
+  :root {
+    /* Reference Tokens */
+    /* Primary Tokens */
+    --ref-primary-0: 0 0% 4%;
+    --ref-primary-10: 0 0% 17%;
+    --ref-primary-20: 0 0% 28%;
+    --ref-primary-30: 0 0% 38%;
+    --ref-primary-40: 0 0% 48%;
+    --ref-primary-50: 0 0% 57%;
+    --ref-primary-60: 0 0% 68%;
+    --ref-primary-70: 0 0% 79%;
+    --ref-primary-80: 0 0% 87%;
+    --ref-primary-90: 0 0% 93%;
+    --ref-primary-100: 0 0% 100%;
+
+    /* Secondary Tokens */
+    --ref-secondary-0: 197 76% 8%;
+    --ref-secondary-10: 197 76% 18%;
+    --ref-secondary-20: 197 76% 28%;
+    --ref-secondary-30: 197 76% 38%;
+    --ref-secondary-40: 198 74% 47%;
+    --ref-secondary-50: 197 77% 58%;
+    --ref-secondary-60: 197 95% 66%;
+    --ref-secondary-70: 197 77% 78%;
+    --ref-secondary-80: 198 77% 88%;
+    --ref-secondary-90: 197 78% 93%;
+    --ref-secondary-100: 195 80% 98%;
+
+    /* Accent-A Tokens */
+    --ref-accent-a-0: 300 100% 15%;
+    --ref-accent-a-10: 300 100% 25%;
+    --ref-accent-a-20: 300 100% 40%;
+    --ref-accent-a-30: 300 100% 45%;
+    --ref-accent-a-40: 300 100% 55%;
+    --ref-accent-a-50: 300 100% 65%;
+    --ref-accent-a-60: 300 100% 75%;
+    --ref-accent-a-70: 300 100% 89%;
+    --ref-accent-a-80: 279 100% 95%;
+    --ref-accent-a-90: 280 100% 97%;
+    --ref-accent-a-100: 280 100% 98%;
+
+    /* Accent-B Tokens */
+    --ref-accent-b-0: 153 85% 8%;
+    --ref-accent-b-10: 152 87% 18%;
+    --ref-accent-b-20: 153 91% 27%;
+    --ref-accent-b-30: 153 88% 38%;
+    --ref-accent-b-40: 153 88% 48%;
+    --ref-accent-b-50: 153 88% 58%;
+    --ref-accent-b-60: 153 88% 68%;
+    --ref-accent-b-70: 153 88% 78%;
+    --ref-accent-b-80: 153 88% 87%;
+    --ref-accent-b-90: 153 82% 98%;
+    --ref-accent-b-100: 150 100% 99%;
+
+    /* Accent-C Tokens */
+    --ref-accent-c-0: 273 100% 13%;
+    --ref-accent-c-10: 273 100% 23%;
+    --ref-accent-c-20: 273 100% 33%;
+    --ref-accent-c-30: 273 100% 43%;
+    --ref-accent-c-40: 273 100% 53%;
+    --ref-accent-c-50: 273 100% 61%;
+    --ref-accent-c-60: 273 100% 73%;
+    --ref-accent-c-70: 273 100% 83%;
+    --ref-accent-c-80: 272 100% 92%;
+    --ref-accent-c-90: 273 100% 96%;
+    --ref-accent-3-100: 274 100% 99%;
+
+    /* Neutral Tokens */
+    --ref-neutral-0: 0 0% 4%;
+    --ref-neutral-10: 0 0% 7%;
+    --ref-neutral-20: 0 0% 12%;
+    --ref-neutral-30: 0 0% 19%;
+    --ref-neutral-40: 0 0% 32%;
+    --ref-neutral-50: 0 0% 42%;
+    --ref-neutral-60: 0 0% 70%;
+    --ref-neutral-70: 210 5% 83%;
+    --ref-neutral-80: 300 3% 93%;
+    --ref-neutral-90: 0 0% 97%;
+    --ref-neutral-100: 0 0% 100%;
+
+    /* Error Tokens */
+    --ref-error-0: 354 68% 6%;
+    --ref-error-10: 355 69% 10%;
+    --ref-error-20: 354 68% 15%;
+    --ref-error-30: 355 69% 25%;
+    --ref-error-40: 354 69% 35%;
+    --ref-error-50: 354 69% 45%;
+    --ref-error-60: 354 69% 55%;
+    --ref-error-70: 354 68% 60%;
+    --ref-error-80: 353 100% 85%;
+    --ref-error-90: 344 100% 96%;
+    --ref-error-100: 348 100% 98%;
+
+    /* Success Tokens */
+    --ref-success-0: 156 100% 2%;
+    --ref-success-10: 158 100% 7%;
+    --ref-success-20: 158 100% 10%;
+    --ref-success-30: 159 100% 15%;
+    --ref-success-40: 158 100% 19%;
+    --ref-success-50: 158 100% 24%;
+    --ref-success-60: 158 80% 43%;
+    --ref-success-70: 156 80% 54%;
+    --ref-success-80: 155 80% 82%;
+    --ref-success-90: 155 81% 94%;
+    --ref-success-100: 152 87% 97%;
+
+    /* Warning Tokens */
+    --ref-warning-0: 21 100% 10%;
+    --ref-warning-10: 20 100% 14%;
+    --ref-warning-20: 21 100% 19%;
+    --ref-warning-30: 21 100% 24%;
+    --ref-warning-40: 21 100% 35%;
+    --ref-warning-50: 21 100% 39%;
+    --ref-warning-60: 21 100% 49%;
+    --ref-warning-70: 21 100% 59%;
+    --ref-warning-80: 21 100% 69%;
+    --ref-warning-90: 20 100% 97%;
+    --ref-warning-100: 37 80% 98%;
+
+    /* Information Tokens */
+    --ref-information-0: 206 100% 5%;
+    --ref-information-10: 206 100% 11%;
+    --ref-information-20: 206 100% 20%;
+    --ref-information-30: 206 100% 25%;
+    --ref-information-40: 206 100% 30%;
+    --ref-information-50: 206 100% 34%;
+    --ref-information-60: 206 100% 54%;
+    --ref-information-70: 206 100% 60%;
+    --ref-information-80: 206 100% 81%;
+    --ref-information-90: 197 100% 93%;
+    --ref-information-100: 204 100% 97%;
+
+    /* Scrim Tokens */
+    --ref-neutral-scrim: 0 0% 0% / 75%;
+    --ref-neutral-sh: 0 0% 0% / 20%;
+
+    /* System Tokens */
+
+    /* Success Tokens */
+    --sys-success: var(--ref-success-50);
+    --sys-on-success: var(--ref-success-100);
+    --sys-success-container: var(--ref-success-90);
+    --sys-on-success-container: var(--ref-success-40);
+    --sys-success-border: var(--ref-success-90);
+
+    /* Warning Tokens */
+    --sys-warning: var(--ref-warning-50);
+    --sys-on-warning: var(--ref-warning-100);
+    --sys-warning-container: var(--ref-warning-90);
+    --sys-on-warning-container: var(--ref-warning-40);
+    --sys-warning-border: var(--ref-warning-90);
+
+    /* Error Tokens */
+    --sys-error: var(--ref-error-50);
+    --sys-on-error: var(--ref-error-100);
+    --sys-error-container: var(--ref-error-90);
+    --sys-on-error-container: var(--ref-error-40);
+    --sys-error-border: var(--ref-error-90);
+
+    /* Information Tokens */
+    --sys-information: var(--ref-information-50);
+    --sys-on-information: var(--ref-information-100);
+    --sys-information-container: var(--ref-information-90);
+    --sys-on-information-container: var(--ref-information-40);
+    --sys-on-information-container-variant: var(--ref-information-70);
+    --sys-information-border: var(--ref-information-90);
+
+    /* Neutral Tokens */
+    --sys-neutral: var(--ref-neutral-50);
+    --sys-on-neutral: var(--ref-neutral-100);
+    --sys-neutral-container: var(--ref-neutral-90);
+    --sys-on-neutral-container: var(--ref-neutral-40);
+    --sys-neutral-border: var(--ref-neutral-90);
+
+    /* Surface Tokens */
+    --sys-surface: var(--ref-neutral-90);
+    --sys-surface-bright: var(--ref-neutral-100);
+    --sys-on-surface: var(--ref-neutral-10);
+    --sys-on-surface-variant: var(--ref-neutral-80);
+    --sys-surface-container: var(--ref-neutral-100);
+    --sys-on-surface-container: var(--ref-neutral-20);
+    --sys-surface-container-bright: var(--ref-neutral-90);
+    --sys-inverse-surface: var(--ref-neutral-10);
+    --sys-on-inverse-surface: var(--ref-neutral-90);
+    --sys-inverse-surface-container: var(--ref-neutral-20);
+    --sys-on-inverse-surface-container: var(--ref-neutral-80);
+
+    /* Scrim Tokens */
+    --sys-scrim: var(--ref-neutral-scrim);
+
+   /* Radio Tokens */
+  --sys-radio: var(--ref-secondary-30);
+
+    /* Focus Tokens */
+    --sys-focus: var(--ref-secondary-40);
+
+    /* Divider Tokens */
+    --sys-divider-decorative: var(--ref-neutral-80);
+    --sys-divider-default: var(--ref-neutral-50);
+
+    /* Form Tokens */
+    --sys-form-default: var(--ref-neutral-60);
+    --sys-form-hover: var(--ref-neutral-0);
+    --sys-form-disabled: var(--ref-neutral-70);
+    --sys-form-error: var(--ref-error-50);
+    --sys-form-success: var(--ref-success-50);
+    --sys-form-active: var(--ref-secondary-50);
+
+    /* Primary Tokens */
+    --sys-primary: var(--ref-primary-0);
+    --sys-on-primary: var(--ref-primary-100);
+    --sys-primary-container: var(--ref-primary-80);
+    --sys-on-primary-container: var(--ref-primary-10);
+
+    /* Secondary Tokens */
+    --sys-secondary: var(--ref-secondary-50);
+    --sys-secondary-pressed: var(--ref-secondary-40);
+    --sys-secondary-text: var(--ref-secondary-20);
+    --sys-on-secondary: var(--ref-secondary-0);
+    --sys-secondary-container: var(--ref-secondary-90);
+    --sys-on-secondary-container: var(--ref-secondary-10);
+    --sys-on-secondary-inverse: var(--ref-secondary-0);
+
+    /* Accent-A Tokens */
+    --sys-accent-a: var(--ref-accent-a-50);
+    --sys-on-accent-a: var(--ref-accent-a-0);
+    --sys-accent-a-container: var(--ref-accent-a-80);
+    --sys-on-accent-a-container: var(--ref-accent-a-0);
+    --sys-accent-a-border: var(--ref-accent-a-80);
+
+    /* Accent-B Tokens */
+    --sys-accent-b: var(--ref-accent-b-50);
+    --sys-on-accent-b: var(--ref-accent-b-0);
+    --sys-accent-b-container: var(--ref-accent-b-80);
+    --sys-on-accent-b-container: var(--ref-accent-b-0);
+    --sys-accent-b-border: var(--ref-accent-b-80);
+
+    /* Accent-C Tokens */
+    --sys-accent-c: var(--ref-accent-c-50);
+    --sys-on-accent-c: var(--ref-accent-c-0);
+    --sys-accent-c-container: var(--ref-accent-c-80);
+    --sys-on-accent-c-container: var(--ref-accent-c-0);
+    --sys-accent-c-border: var(--ref-accent-c-80);
+
+    /* Shadcn Colors */
+    --background: 0 0% 100%; /* Light background */
+    --foreground: 222.2 84% 4.9%; /* Light foreground */
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 0 0% 97%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 300 3% 93%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+    --error: 7 76% 83%;
+    --error-foreground: 7 76% 23%;
+    --success: 154 76% 83%;
+    --success-foreground: 154 76% 3%;
+    --warning: 32 76% 83%;
+    --warning-foreground: 32 76% 23%;
+    --info: 205 76% 83%;
+    --info-foreground: 205 76% 23%;
+  }
+
+  .dark {
+    /* Success Tokens */
+    --sys-success: var(--ref-success-70);
+    --sys-on-success: var(--ref-success-10);
+    --sys-success-container: var(--ref-success-10);
+    --sys-on-success-container: var(--ref-success-70);
+    --sys-success-border: var(--ref-success-70);
+
+    /* Warning Tokens */
+    --sys-warning: var(--ref-warning-70);
+    --sys-on-warning: var(--ref-warning-10);
+    --sys-warning-container: var(--ref-warning-10);
+    --sys-on-warning-container: var(--ref-warning-70);
+    --sys-warning-border: var(--ref-warning-70);
+
+    /* Error Tokens */
+    --sys-error: var(--ref-error-70);
+    --sys-on-error: var(--ref-error-10);
+    --sys-error-container: var(--ref-error-10);
+    --sys-on-error-container: var(--ref-error-70);
+    --sys-error-border: var(--ref-error-70);
+
+    /* Information Tokens */
+    --sys-information: var(--ref-information-70);
+    --sys-on-information: var(--ref-information-10);
+    --sys-information-container: var(--ref-information-10);
+    --sys-on-information-container: var(--ref-information-70);
+    --sys-on-information-container-variant: var(--ref-information-50);
+    --sys-information-border: var(--ref-information-70);
+
+    /* Neutral Tokens */
+    --sys-neutral: var(--ref-neutral-60);
+    --sys-on-neutral: var(--ref-neutral-20);
+    --sys-neutral-container: var(--ref-neutral-20);
+    --sys-on-neutral-container: var(--ref-neutral-60);
+    --sys-neutral-border: var(--ref-neutral-60);
+
+    /* Surface Tokens */
+    --sys-surface: var(--ref-neutral-0);
+    --sys-surface-bright: var(--ref-neutral-20);
+    --sys-on-surface: var(--ref-neutral-80);
+    --sys-on-surface-variant: var(--ref-neutral-30);
+    --sys-surface-container: var(--ref-neutral-30);
+    --sys-on-surface-container: var(--ref-neutral-90);
+    --sys-surface-container-bright: var(--ref-neutral-30);
+    --sys-inverse-surface: var(--ref-neutral-90);
+    --sys-on-inverse-surface: var(--ref-neutral-20);
+    --sys-inverse-surface-container: var(--ref-neutral-20);
+    --sys-on-inverse-surface-container: var(--ref-neutral-70);
+
+    /* Focus Tokens */
+    --sys-focus: var(--ref-secondary-40);
+
+    /* Scrim Tokens */
+    --sys-scrim: var(--ref-neutral-scrim);
+
+    /* Radio Tokens */
+  --sys-radio: var(--ref-secondary-40);
+
+    /* Divider Tokens */
+    --sys-divider-decorative: var(--ref-neutral-40);
+    --sys-divider-default: var(--ref-neutral-70);
+
+    /* Form Tokens */
+    --sys-form-default: var(--ref-neutral-50);
+    --sys-form-hover: var(--ref-neutral-40);
+    --sys-form-disabled: var(--ref-neutral-40);
+    --sys-form-error: var(--ref-error-60);
+    --sys-form-success: var(--ref-success-60);
+    --sys-form-active: var(--ref-secondary-60);
+
+    /* Primary Tokens */
+    --sys-primary: var(--ref-primary-10);
+    --sys-on-primary: var(--ref-primary-100);
+    --sys-primary-container: var(--ref-primary-90);
+    --sys-on-primary-container: var(--ref-primary-10);
+
+    /* Secondary Tokens */
+    --sys-secondary: var(--ref-secondary-60);
+    --sys-secondary-pressed: var(--ref-secondary-40);
+    --sys-secondary-text: var(--ref-secondary-60);
+    --sys-on-secondary: var(--ref-secondary-0);
+    --sys-secondary-container: var(--ref-secondary-10);
+    --sys-on-secondary-container: var(--ref-secondary-70);
+    --sys-on-secondary-inverse: var(--ref-secondary-100);
+
+    /* Accent-A Tokens */
+    --sys-accent-a: var(--ref-accent-a-40);
+    --sys-on-accent-a: var(--ref-accent-a-0);
+    --sys-accent-a-container: var(--ref-accent-a-10);
+    --sys-on-accent-a-container: var(--ref-accent-a-70);
+    --sys-accent-a-border: var(--ref-accent-a-40);
+
+    /* Accent-B Tokens */
+    --sys-accent-b: var(--ref-accent-b-40);
+    --sys-on-accent-b: var(--ref-accent-b-0);
+    --sys-accent-b-container: var(--ref-accent-b-10);
+    --sys-on-accent-b-container: var(--ref-accent-b-70);
+    --sys-accent-b-border: var(--ref-accent-b-40);
+
+    /* Accent-C Tokens */
+    --sys-accent-c: var(--ref-accent-c-40);
+    --sys-on-accent-c: var(--ref-accent-c-0);
+    --sys-accent-c-container: var(--ref-accent-c-10);
+    --sys-on-accent-c-container: var(--ref-accent-c-70);
+    --sys-accent-c-border: var(--ref-accent-c-40);
+
+    /* Shadcn Colors */
+    --background: 0 0% 0%; /* Full black in HSL */
+    --foreground: 210 40% 98%; /* Dark foreground */
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 0 0% 19%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 240 5.9% 10%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 0 0% 19%;
+    --accent-foreground: 210 40% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 212.7 26.8% 83.9%;
+    --error: 6 76% 10%;
+    --error-foreground: 6 76% 70%;
+    --success: 91 76% 10%;
+    --success-foreground: 91 76% 50%;
+    --warning: 31 76% 10%;
+    --warning-foreground: 31 76% 70%;
+    --info: 188 76% 10%;
+    --info-foreground: 188 76% 50%;
+  }
+}
+
+/* Apply the theme styles */
+@layer base {
+  /* html {
+    @apply font-proxima;
+  } */
+  * {
+    @apply border-border;
+  }
+}
+
+body,
+.docs-story {
+  @apply bg-background text-foreground;
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
