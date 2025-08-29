@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Builds / outputs
+storybook-static/
+dist/
+build/
+.next/
+out/
+coverage/
+
+# Editor/OS
+.DS_Store
+*.log
+
+# Env
+.env
+.env.*
+
+# Vite/TS
+*.tsbuildinfo
+
